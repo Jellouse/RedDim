@@ -1,6 +1,6 @@
 # RedDim
 
-Tiny macOS menubar app. Dims non-red colours; red stays relatively strong.
+Tiny macOS menubar app for **reducing blue light for better sleep**. Dims non-red colours on screen; red stays relatively strong, so evenings feel warmer without a full orange wash.
 
 ## Install
 
@@ -20,7 +20,7 @@ open RedDim.app
 ## Controls
 
 - **On/Off** — remembers last intensity
-- **Auto sunset** — ramps up over 30 minutes after sunset to the slider cap; ramps down over 30 minutes after sunrise
+- **Auto sunset** — ramps up over 30 minutes after sunset to the slider cap; ramps down over 30 minutes after sunrise (for night wind-down / morning fade-out)
 - **Slider** — intensity, or “up to X%” when Auto is on
 - **Applied** — current effective %
 
@@ -28,9 +28,9 @@ Location optional (defaults Berlin) for sunrise/sunset timing.
 
 ## How it works
 
-`CGSetDisplayTransferByTable` on all active displays: keep the red curve, compress green/blue. No ScreenCaptureKit overlay (that froze the desktop in an early build).
+`CGSetDisplayTransferByTable` on all active displays: keep the red curve, compress green/blue (less short-wavelength light). No ScreenCaptureKit overlay.
 
-Independent channel LUTs cannot do true ±15–20° hue soft-falloff; this is a visible channel approximation.
+Independent channel LUTs cannot do true ±15–20° hue soft-falloff; this is a visible channel approximation aimed at sleep-friendly evenings, not a medical device.
 
 ## Limits
 
